@@ -1,0 +1,611 @@
+/* Helmet Page Styles */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../Motor.Picture/CafeRacer2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Helmet Container */
+.helmet-container {
+    max-width: 1200px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header Styles */
+.helmet-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(44, 47, 49, 0.8));
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(207, 150, 25, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.helmet-header h1 {
+    color: rgb(207, 150, 25);
+    font-family: fantasy;
+    font-size: 52px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                 0 0 20px rgba(207, 150, 25, 0.3);
+    letter-spacing: 2px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(207, 150, 25, 0.3); }
+    to { text-shadow: 0 0 20px rgba(207, 150, 25, 0.6),
+                      0 0 30px rgba(207, 150, 25, 0.4); }
+}
+
+.subtitle {
+    color: antiquewhite;
+    font-size: 24px;
+    margin: 20px 0 0;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Gallery Section */
+.gallery-section {
+    margin-bottom: 60px;
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(44, 47, 49, 0.8));
+    color: antiquewhite;
+    border: 1px solid rgba(207, 150, 25, 0.3);
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: impact;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: linear-gradient(135deg, rgb(207, 150, 25), rgb(182, 132, 20));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(207, 150, 25, 0.3);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 1;
+}
+
+.gallery-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    overflow: hidden;
+}
+
+.gallery-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .gallery-image img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay h3 {
+    color: rgb(207, 150, 25);
+    font-family: fantasy;
+    font-size: 24px;
+    margin: 0 0 10px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.gallery-overlay p {
+    color: antiquewhite;
+    font-size: 16px;
+    margin: 0;
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.gallery-item:hover .gallery-overlay h3,
+.gallery-item:hover .gallery-overlay p {
+    transform: translateY(0);
+}
+
+/* Helmet Info Section */
+.helmet-info {
+    margin-bottom: 60px;
+}
+
+.info-section {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(44, 47, 49, 0.8));
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(207, 150, 25, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.info-section h2 {
+    color: rgb(207, 150, 25);
+    font-family: fantasy;
+    font-size: 36px;
+    text-align: center;
+    margin: 0 0 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-item {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(207, 150, 25, 0.1);
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(207, 150, 25, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.info-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.info-item h3 {
+    color: rgb(207, 150, 25);
+    font-family: fantasy;
+    font-size: 24px;
+    margin: 0 0 15px;
+}
+
+.info-item p {
+    color: antiquewhite;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(44, 47, 49, 0.8));
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(207, 150, 25, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.cta-section h2 {
+    color: rgb(207, 150, 25);
+    font-size: 36px;
+    margin: 0 0 30px;
+    font-family: fantasy;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cta-button {
+    font-family: impact;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, rgb(207, 150, 25), rgb(182, 132, 20));
+    color: antiquewhite;
+    border: none;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: rgb(207, 150, 25);
+    border: 2px solid rgb(207, 150, 25);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(207, 150, 25, 0.3);
+}
+
+.cta-button.primary:hover {
+    background: linear-gradient(135deg, rgb(182, 132, 20), rgb(207, 150, 25));
+}
+
+.cta-button.secondary:hover {
+    background: rgba(207, 150, 25, 0.1);
+}
+
+/* Active Navigation Link */
+nav a.active {
+    color: rgb(207, 150, 25);
+    text-shadow: 0 0 15px rgba(207, 150, 25, 0.5);
+    position: relative;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgb(207, 150, 25);
+    box-shadow: 0 0 10px rgba(207, 150, 25, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px;
+    }
+    
+    nav a {
+        font-size: 120%;
+        margin-right: 20px;
+        float: none;
+        display: inline-block;
+        margin: 0 10px;
+    }
+    
+    .helmet-container {
+        margin-top: 80px;
+        padding: 0 15px;
+    }
+
+    .helmet-header {
+        padding: 25px 15px;
+        margin-bottom: 40px;
+    }
+
+    .helmet-header h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .gallery-filters {
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .gallery-overlay {
+        padding: 15px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 20px;
+    }
+
+    .gallery-overlay p {
+        font-size: 14px;
+    }
+
+    .info-section {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .info-section h2 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .info-item {
+        padding: 15px;
+    }
+
+    .info-item h3 {
+        font-size: 20px;
+    }
+
+    .info-item p {
+        font-size: 14px;
+    }
+
+    .cta-section {
+        padding: 30px 15px;
+    }
+
+    .cta-section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    nav {
+        padding: 8px;
+    }
+    
+    nav a {
+        font-size: 100%;
+        margin: 0 5px;
+    }
+    
+    .helmet-container {
+        margin-top: 70px;
+        padding: 0 10px;
+    }
+
+    .helmet-header {
+        padding: 20px 10px;
+    }
+
+    .helmet-header h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .gallery-filters {
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .gallery-overlay {
+        padding: 12px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 18px;
+    }
+
+    .gallery-overlay p {
+        font-size: 13px;
+    }
+
+    .info-section {
+        padding: 15px;
+    }
+
+    .info-section h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .info-item {
+        padding: 12px;
+    }
+
+    .info-item h3 {
+        font-size: 18px;
+    }
+
+    .info-item p {
+        font-size: 13px;
+    }
+
+    .cta-section {
+        padding: 25px 10px;
+    }
+
+    .cta-section h2 {
+        font-size: 20px;
+    }
+
+    .cta-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Small tablets (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav a {
+        font-size: 150%;
+        margin-right: 50px;
+    }
+    
+    .helmet-container {
+        margin-top: 110px;
+        padding: 0 30px;
+    }
+
+    .helmet-header h1 {
+        font-size: 44px;
+    }
+
+    .subtitle {
+        font-size: 22px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .info-section {
+        padding: 30px;
+    }
+
+    .info-section h2 {
+        font-size: 32px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .helmet-container {
+        margin-top: 60px;
+    }
+    
+    .helmet-header {
+        padding: 20px 15px;
+        margin-bottom: 30px;
+    }
+    
+    .helmet-header h1 {
+        font-size: 28px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+    }
+    
+    .info-section {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(207, 150, 25, 0.5);
+    border-radius: 6px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(207, 150, 25, 0.7);
+}

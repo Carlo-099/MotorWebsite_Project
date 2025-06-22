@@ -1,0 +1,444 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../Motor.Picture/CafeRacer3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+nav{
+    background: linear-gradient(135deg, rgba(110, 60, 9, 0.8), rgba(110, 60, 9, 0.6));
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(207, 150, 25, 0.2);
+}
+a{  float: right;
+    color: antiquewhite;
+    text-decoration:none ; /*Para walang underline*/
+    margin-right: 90px;
+    font-family:impact;
+    font-size: 180%;
+    transition: all 0.4s ease;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(207, 150, 25);
+    transition: width 0.3s ease;
+}
+a:hover{
+    color: rgb(207, 150, 25);
+    transform: translateY(-2px);
+    text-shadow: 0 0 15px rgba(207, 150, 25, 0.5);
+}
+a:hover::after {
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    height: 100vh;
+    align-items: flex-start;
+    padding-top: 120px;
+    animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.col{
+    margin: 10px 30px;
+    flex-basis: 50%;
+    transition: all 0.4s ease;
+}
+
+.col:first-child {
+    margin-top: 100px;  /* Add space from the top for the first column */
+    animation: slideInLeft 1s ease-out;
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Add styles for the cards container */
+.col:last-child {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 50px;
+    animation: slideInRight 1s ease-out;
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.Card {
+    width: 100%;
+    max-width: 230px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.4s ease;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.Card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+    transition: all 0.4s ease;
+}
+
+.Card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(207, 150, 25, 0.3);
+}
+
+.Card:hover::before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+}
+
+.Card h3, .Card h4 {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+h1{
+    color: rgb(207, 150, 25);
+    font-size: 100px;
+    margin: 50px 70px;  /* Increased top margin */
+    font-family:fantasy;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                 0 0 20px rgba(207, 150, 25, 0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(207, 150, 25, 0.3); }
+    to { text-shadow: 0 0 20px rgba(207, 150, 25, 0.6),
+                      0 0 30px rgba(207, 150, 25, 0.4); }
+}
+p{
+    color: antiquewhite;
+    font-size: 50px;
+    line-height: 1.2;
+    margin: 30px 70px;  /* Increased top margin */
+    font-family:'Segoe UI';
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+button{
+    font-family: impact;
+    width: 200px;
+    color: antiquewhite ;
+    font-size: 22px;
+    padding: 15px 0;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(44, 47, 49, 0.9), rgba(44, 47, 49, 0.7));
+    outline: none;
+    margin-top: 80px;  /* Increased top margin */
+    margin-left: 70px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(207, 150, 25, 0.2), transparent);
+    transition: 0.5s;
+}
+button:hover {
+    background: linear-gradient(135deg, rgb(207, 150, 25), rgb(182, 132, 20));
+    transform: translateX(10px) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(207, 150, 25, 0.3);
+}
+button:hover::before {
+    left: 100%;
+}
+button:active {
+    transform: translateX(5px) translateY(-1px);
+    box-shadow: 0 4px 15px rgba(207, 150, 25, 0.2);
+}
+ 
+
+.Card1{
+    background-image: url(../Motor.Picture/PARTS.jpg) ;
+}
+.Card2{
+    background-image: url(../Motor.Picture/FIELD.jpg) ;
+}
+.Card3{
+    background-image: url(../Motor.Picture/HELMET.jpg) ;
+}
+.Card4{
+    background-image: url(../Motor.Picture/CafeRacer4.jpg) ;
+}
+
+
+h4{
+    color:rgba(237, 242, 246, 0.9);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    text-align: center;
+    border-radius: 8px;
+    font-size: 30px;
+    font-family: monospace;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+h4:hover{
+    color:rgb(207, 150, 25);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    transform: scale(1.05);
+}
+
+
+h3{
+    color: rgb(237, 246, 247);
+    text-align: center;
+    font-size: 30px;
+    font-family: monospace;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+h3:hover{
+    color:rgb(207, 150, 25);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    transform: scale(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(207, 150, 25, 0.5);
+    border-radius: 6px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(207, 150, 25, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px;
+    }
+    
+    nav a {
+        font-size: 120%;
+        margin-right: 20px;
+        float: none;
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .row {
+        flex-direction: column;
+        padding-top: 80px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .col:first-child {
+        margin-top: 20px;
+        margin: 10px;
+        flex-basis: auto;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin: 20px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 24px;
+        margin: 15px 20px;
+        text-align: center;
+    }
+
+    button {
+        width: 140px;
+        font-size: 16px;
+        padding: 10px 0;
+        margin: 30px auto;
+        display: block;
+    }
+
+    .col:last-child {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+        margin: 10px;
+        flex-basis: auto;
+    }
+
+    .Card {
+        max-width: 280px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    h3, h4 {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    nav {
+        padding: 10px;
+    }
+    
+    nav a {
+        font-size: 100%;
+        margin: 0 5px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin: 15px;
+    }
+
+    p {
+        font-size: 20px;
+        margin: 10px 15px;
+    }
+
+    button {
+        width: 120px;
+        font-size: 14px;
+        padding: 8px 0;
+        margin: 20px auto;
+    }
+
+    .Card {
+        max-width: 250px;
+        height: 160px;
+    }
+
+    h3, h4 {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+/* Small tablets (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav a {
+        font-size: 150%;
+        margin-right: 50px;
+    }
+
+    h1 {
+        font-size: 80px;
+        margin: 40px 50px;
+    }
+
+    p {
+        font-size: 40px;
+        margin: 25px 50px;
+    }
+
+    button {
+        width: 180px;
+        font-size: 20px;
+        padding: 13px 0;
+        margin: 60px 50px;
+    }
+
+    .col:last-child {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .Card {
+        max-width: 200px;
+        height: 200px;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .row {
+        padding-top: 60px;
+    }
+    
+    .col:first-child {
+        margin-top: 10px;
+    }
+    
+    h1 {
+        font-size: 40px;
+        margin: 15px;
+    }
+    
+    p {
+        font-size: 20px;
+        margin: 10px 15px;
+    }
+    
+    button {
+        margin: 20px auto;
+    }
+}

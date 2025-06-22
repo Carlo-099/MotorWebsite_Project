@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Racer Helmets</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/helmet.css">
+</head>
+<body>
+    <nav>
+        <a href="contact.html">Contact</a>
+        <a href="index.html" target="_self">Home</a>
+        <a href="about.html" target="_self">About</a>
+      
+    </nav>
+
+    <div class="helmet-container">
+        <div class="helmet-header">
+            <h1>Cafe Racer Helmets</h1>
+            <p class="subtitle">Classic style meets modern safety</p>
+        </div>
+
+        <div class="gallery-section">
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="classic">Classic</button>
+                <button class="filter-btn" data-filter="modern">Modern</button>
+                <button class="filter-btn" data-filter="custom">Custom</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="classic">
+                    <div class="gallery-image">
+                        <img src="Motor.helmet/helmet01.jpg" alt="Classic Cafe Racer Helmet">
+                        <div class="gallery-overlay">
+                            <h3>Classic Retro</h3>
+                            <p>Vintage-inspired design with modern safety features</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="modern">
+                    <div class="gallery-image">
+                        <img src="Motor.helmet/helmet02.jpg" alt="Modern Cafe Racer Helmet">
+                        <div class="gallery-overlay">
+                            <h3>Modern Style</h3>
+                            <p>Contemporary design with advanced protection</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="custom">
+                    <div class="gallery-image">
+                        <img src="Motor.helmet/helmet03.jpg" alt="Custom Cafe Racer Helmet">
+                        <div class="gallery-overlay">
+                            <h3>Custom Design</h3>
+                            <p>Handcrafted unique pieces for the discerning rider</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="classic">
+                    <div class="gallery-image">
+                        <img src="Motor.helmet/helmet04.jpg" alt="Classic Cafe Racer Helmet">
+                        <div class="gallery-overlay">
+                            <h3>Vintage Charm</h3>
+                            <p>Timeless design with premium materials</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="modern">
+                    <div class="gallery-image">
+                        <img src="Motor.helmet/helmet01.jpg" alt="Modern Cafe Racer Helmet">
+                        <div class="gallery-overlay">
+                            <h3>Premium Classic</h3>
+                            <p>Elegant design with superior comfort</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="custom">
+                    <div class="gallery-image">
+                        <img src="Motor.helmet/helmet02.jpg" alt="Custom Cafe Racer Helmet">
+                        <div class="gallery-overlay">
+                            <h3>Urban Elite</h3>
+                            <p>Modern aesthetics with urban appeal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="classic">
+                    <div class="gallery-image">
+                        <img src="Motor.helmet/helmet03.jpg" alt="Classic Cafe Racer Helmet">
+                        <div class="gallery-overlay">
+                            <h3>Heritage Design</h3>
+                            <p>Classic styling with contemporary features</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="modern">
+                    <div class="gallery-image">
+                        <img src="Motor.helmet/helmet04.jpg" alt="Modern Cafe Racer Helmet">
+                        <div class="gallery-overlay">
+                            <h3>Modern Classic</h3>
+                            <p>Blending tradition with innovation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="helmet-info">
+            <div class="info-section">
+                <h2>Why Choose a Cafe Racer Helmet?</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">🛡️</div>
+                        <h3>Safety First</h3>
+                        <p>Modern safety standards with classic styling</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🎨</div>
+                        <h3>Unique Style</h3>
+                        <p>Distinctive designs that stand out</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✨</div>
+                        <h3>Premium Quality</h3>
+                        <p>High-quality materials and craftsmanship</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🎯</div>
+                        <h3>Perfect Fit</h3>
+                        <p>Comfortable and secure for long rides</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Find Your Perfect Helmet</h2>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-button primary">Contact Us</a>
+                <a href="parts.html" class="cta-button secondary">Explore Parts</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 10);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

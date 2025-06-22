@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cafe Racer - Home</title>
+        <link rel="stylesheet" href="Css/style.css">
+    </head>
+    <body>
+   <!--NAVIGATION BAR-->
+        <nav>
+            <a href="contact.html"target="_self">Contact</a>
+            <a href="index.html" target="_self">Home</a>
+            <a href="about.html" target="_self">About</a>
+        </nav>
+
+     <div class="row">
+        <div class="col" onclick="More()">
+            <h1>Cafe Racer</h1>
+            <p>All About Classic</p>
+            <button type="button" href="">More</button>
+        </div>
+        <script>
+            function More() {
+                window.location.href = "";
+            }
+        </script>
+
+       <div class="col">
+    <!--CARDS 1-->
+        <div class="Card Card1" onclick="otherWebsite()">
+            <h4>Parts</h4>
+        </div>
+        <script>
+            function otherWebsite() {
+                window.location.href = 'parts.html';
+            }
+        </script>
+     <!--CARDS 2-->
+        <div class="Card Card2" onclick="redirectToAnotherWebsite()">
+            <h3>Field</h3> 
+        </div>
+
+        <script>
+            function redirectToAnotherWebsite() {
+                window.location.href = '';
+            }
+        </script>
+
+        <!--CARDS 3-->
+        <div class="Card Card3" onclick="redirectToAnotherWebsite()">
+        <h3>Helmet</h3>
+        </div>
+
+        <script>
+        function redirectToAnotherWebsite() {
+            window.location.href = 'helmet.html';
+        }
+        </script>
+        <!--CARDS 4-->
+        <div class="Card Card4" onclick="YouTube()">
+            <h4>Example</h4>
+        </div>
+        <script>
+            function YouTube() {
+                window.location.href = "example.html";
+            }
+        </script>
+       </div>
+    </div>
+    </body>
+</html>

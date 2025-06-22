@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Racer Gallery</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/example.css">
+</head>
+<body>
+    <nav>
+        <a href="contact.html" target="_self">Contact</a>
+        <a href="index.html" target="_self">Home</a>
+        <a href="about.html" target="_self">About</a>
+     
+    </nav>
+
+    <div class="gallery-container">
+        <div class="gallery-header">
+            <h1>Cafe Racer Gallery</h1>
+            <p class="subtitle">Explore our collection of stunning cafe racers</p>
+        </div>
+
+        <div class="gallery-section">
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="classic">Classic</button>
+                <button class="filter-btn" data-filter="modern">Modern</button>
+                <button class="filter-btn" data-filter="custom">Custom</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="classic">
+                    <div class="gallery-image">
+                        <img src="Motor.Picture/CafeRacer1.jpg" alt="Classic Cafe Racer">
+                        <div class="gallery-overlay">
+                            <h3>Classic Beauty</h3>
+                            <p>Timeless design with vintage appeal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="modern">
+                    <div class="gallery-image">
+                        <img src="Motor.Picture/CafeRacer2.jpg" alt="Modern Cafe Racer">
+                        <div class="gallery-overlay">
+                            <h3>Modern Classic</h3>
+                            <p>Contemporary styling with classic elements</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="custom">
+                    <div class="gallery-image">
+                        <img src="Motor.Picture/CafeRacer3.jpg" alt="Custom Cafe Racer">
+                        <div class="gallery-overlay">
+                            <h3>Custom Build</h3>
+                            <p>Unique modifications and personal touches</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="classic">
+                    <div class="gallery-image">
+                        <img src="Motor.Picture/CafeRacer4.jpg" alt="Classic Cafe Racer">
+                        <div class="gallery-overlay">
+                            <h3>Vintage Charm</h3>
+                            <p>Authentic retro styling and character</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="modern">
+                    <div class="gallery-image">
+                        <img src="Motor.Picture/download.jpg" alt="Modern Cafe Racer">
+                        <div class="gallery-overlay">
+                            <h3>Urban Style</h3>
+                            <p>Modern aesthetics for city riding</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="custom">
+                    <div class="gallery-image">
+                        <img src="Motor.Picture/download (1).jpg" alt="Custom Cafe Racer">
+                        <div class="gallery-overlay">
+                            <h3>Artisan Build</h3>
+                            <p>Handcrafted with attention to detail</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="classic">
+                    <div class="gallery-image">
+                        <img src="Motor.Picture/download (2).jpg" alt="Classic Cafe Racer">
+                        <div class="gallery-overlay">
+                            <h3>Heritage Design</h3>
+                            <p>Preserving the classic cafe racer spirit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="modern">
+                    <div class="gallery-image">
+                        <img src="Motor.Picture/FIELD.jpg" alt="Modern Cafe Racer">
+                        <div class="gallery-overlay">
+                            <h3>Field Ready</h3>
+                            <p>Built for adventure and performance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-info">
+            <div class="info-section">
+                <h2>Why Choose a Cafe Racer?</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">🎨</div>
+                        <h3>Unique Style</h3>
+                        <p>Distinctive design that stands out from the crowd</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⚡</div>
+                        <h3>Performance</h3>
+                        <p>Lightweight and agile for an exciting ride</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🛠️</div>
+                        <h3>Customization</h3>
+                        <p>Endless possibilities for personal expression</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🌟</div>
+                        <h3>Heritage</h3>
+                        <p>Rich history and cultural significance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Build Your Dream Cafe Racer?</h2>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-button primary">Get in Touch</a>
+                <a href="parts.html" class="cta-button secondary">Explore Parts</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 10);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
